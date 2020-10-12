@@ -1,0 +1,92 @@
+{
+    "paths": [
+        {
+            "name": "/user/rget",
+            "lambdaFunction": "userRandom",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/rget"
+        },
+        {
+            "name": "/user/cluster",
+            "lambdaFunction": "userCluster",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/cluster"
+        },
+        {
+            "name": "/user/db/read",
+            "lambdaFunction": "userDbRead",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/db/read"
+        },
+        {
+            "name": "/user/db/write/{user}",
+            "lambdaFunction": "userSaveDB",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/user/db/write/*"
+        }
+    ],
+    "resourceName": "sempliApi",
+    "apiName": "sempliApi",
+    "functionArns": [
+        {
+            "lambdaFunction": "userRandom"
+        },
+        {
+            "lambdaFunction": "userCluster"
+        },
+        {
+            "lambdaFunction": "userDbRead"
+        },
+        {
+            "lambdaFunction": "userSaveDB"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-amplinew-dev-143705-authRole",
+        "unAuthRoleName": "amplify-amplinew-dev-143705-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "userRandom",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "userCluster",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "userDbRead",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "userSaveDB",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
